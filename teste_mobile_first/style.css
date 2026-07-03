@@ -1,0 +1,223 @@
+/* =========================================
+   1. ESTILOS BASE (Foco em Celulares) - TEMA CORPORATIVO BOOTSTRAP
+   ========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; 
+    background-color: #f8f9fa; 
+    color: #212529; 
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0; 
+}
+
+/* --- Nova Barra de Navegação Fixa --- */
+.navbar-fixa {
+    background-color: #000000; 
+    padding: 15px 20px; /* Bem mais fina */
+    border-bottom: 2px solid #00a2ed; 
+    
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+/* Coloca o Logo e o Botão na mesma linha, um de cada lado */
+.navbar-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilo do Logo (NogLabs) */
+.logo {
+    font-size: 1.8rem;
+    color: #00a2ed; 
+    font-weight: 900; 
+    text-decoration: none;
+}
+
+/* --- Estilos do Botão Hambúrguer --- */
+.botao-menu {
+    background: none;
+    border: none;
+    color: #00a2ed; 
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 6px; 
+}
+
+/* --- Estilos do Menu Mobile --- */
+.menu {
+    display: none; 
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px; /* Espaço entre o topo e as opções */
+}
+
+.menu.ativo {
+    display: flex; 
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 6px; 
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu a:hover {
+    color: #ffffff; 
+    background-color: #00a2ed; 
+}
+
+/* --- Seção de Destaque (Texto que antes ficava no cabeçalho) --- */
+.destaque {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0 40px 0; /* Espaço para respirar */
+}
+
+.destaque h2 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* --- Restante da Página --- */
+.introducao {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px; 
+    text-transform: uppercase; 
+    font-weight: 700;
+}
+
+h2 {
+    color: #000000; 
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.projetos {
+    padding-top: 20px;
+}
+
+.grade-projetos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cartao-projeto {
+    background-color: #ffffff; 
+    border: 1px solid rgba(0, 0, 0, 0.125); 
+    border-radius: 8px; 
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+.cartao-projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-projeto h3 {
+    margin-bottom: 10px;
+    color: #00a2ed; 
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #000000; 
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: 6px; 
+    border: 1px solid #000000;
+    transition: all 0.3s ease-in-out; 
+}
+
+.botao:hover {
+    background-color: #00a2ed; 
+    border-color: #00a2ed;
+    color: #ffffff;
+}
+
+.rodape {
+    background-color: #000000; 
+    color: #ffffff; 
+    text-align: center;
+    padding: 40px 20px; 
+}
+
+/* =========================================
+   2. MEDIA QUERIES (Adaptação para Desktop)
+   ========================================= */
+
+@media (min-width: 768px) {
+    
+    /* No Desktop, a barra vira uma linha só com Logo na esquerda e Menu na direita */
+    .navbar-fixa {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%; /* Alinha com o container do site */
+    }
+
+    .botao-menu {
+        display: none; /* Some com o hambúrguer */
+    }
+
+    .menu {
+        display: flex; 
+        flex-direction: row; /* Links deitados */
+        margin-top: 0; /* Remove a margem do topo que era do celular */
+        gap: 15px; 
+    }
+
+    .destaque h2 {
+        font-size: 1.8rem; /* Texto de destaque maior no PC */
+    }
+
+    .grade-projetos {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .cartao-projeto {
+        flex: 1; 
+        margin: 0 10px;
+    }
+
+    .cartao-projeto:first-child { margin-left: 0; }
+    .cartao-projeto:last-child { margin-right: 0; }
+}

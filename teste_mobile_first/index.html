@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio de Apps Web</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="home">
+
+    <header class="navbar-fixa">
+        <div class="navbar-topo">
+            <a href="#home" class="logo">NogLabs</a>
+            <button id="botao-menu" class="botao-menu">&#9776;</button>
+        </div>
+        
+        <nav class="menu" id="menu-links">
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre nós</a>
+            <a href="#aplicativos">Aplicativos</a>
+        </nav>
+    </header>
+
+    <section class="destaque">
+        <div class="container">
+            <h2>Transforme suas ideias em realidade digital</h2>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <section class="introducao" id="sobre">
+            <p>Na NogLabs, acreditamos que a tecnologia é a chave para desbloquear o potencial máximo de qualquer empreendimento. Com uma equipe de especialistas talentosos e apaixonados, estamos comprometidos em oferecer soluções sob medida que impulsionem o seu sucesso.</p>
+        </section>
+
+        <section class="projetos" id="aplicativos">
+            <h2>Nossos Projetos</h2>
+            
+            <div class="grade-projetos">
+                <article class="cartao-projeto">
+                    <h3>App de Tarefas</h3>
+                    <p>Um aplicativo simples e rápido para gerenciar o dia a dia.</p>
+                    <a href="#" class="botao">Ver Projeto</a>
+                </article>
+
+                <article class="cartao-projeto">
+                    <h3>Calculadora Financeira</h3>
+                    <p>Ferramenta web para ajudar no cálculo de juros compostos.</p>
+                    <a href="#" class="botao">Ver Projeto</a>
+                </article>
+
+                <article class="cartao-projeto">
+                    <h3>Clima Hoje</h3>
+                    <p>Consumo de API para mostrar a previsão do tempo local.</p>
+                    <a href="#" class="botao">Ver Projeto</a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>Desenvolvido com dedicação &copy; 2026</p>
+    </footer>
+
+    <script>
+        const botaoMenu = document.getElementById('botao-menu');
+        const menuLinks = document.getElementById('menu-links');
+        // Selecionamos todos os links de dentro do menu
+        const linksDoMenu = document.querySelectorAll('.menu a'); 
+
+        // 1. Abre/Fecha o menu ao clicar no hambúrguer
+        botaoMenu.addEventListener('click', function() {
+            menuLinks.classList.toggle('ativo');
+        });
+
+        // 2. Fecha o menu ao clicar em qualquer opção
+        linksDoMenu.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Remove a classe 'ativo' forçando o menu a fechar
+                menuLinks.classList.remove('ativo'); 
+            });
+        });
+    </script>
+</body>
+</html>
